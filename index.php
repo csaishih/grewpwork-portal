@@ -25,17 +25,24 @@
 			<div class="links">
 				<ul>
 					<li><a>Link to Sam's part</a></li>
-					<li><a id="links-setting">Log out</a></li>
+					<li><a href="http://grewpwork.com" id="links-setting">Log out</a></li>
 				</ul>
 			</div>
 		</div>
 
 		<div class="side">
 			<ul>
-				<li><a class="active" href="#pane1">User Stats</a></li>
-				<li><a href="#pane2">BI Stats</a></li>
-				<li><a href="#pane3">Movie Stats</a></li>
-				<li><a href="#pane4">Entity Word Cloud</a></li>
+				<li class="active bigboss"><a href="#pane1" id="pane-user">User Stats</a></li>
+				<li class="mini-active show miniboss"><a href="#pane1-content1" id="pane-user-mini-1">User Statistics VS Time</a></li>
+				<li class="bigboss"><a href="#pane2" id="pane-bi">BI Stats</a></li>
+				<li class="miniboss"><a href="#pane2-content1" id="pane-bi-mini-1">Total Purchases and Requests</a></li>
+				<li class="miniboss"><a href="#pane2-content2" id="pane-bi-mini-2">Average Purchases and Requests</a></li>
+				<li class="miniboss"><a href="#pane2-content3" id="pane-bi-mini-3">Total Revenue</a></li>
+				<li class="bigboss"><a href="#pane3" id="pane-movie">Movie Stats</a></li>
+				<li class="miniboss"><a href="#pane3-content1" id="pane-movie-mini-1">Movie Tweet Tally</a></li>
+				<li class="miniboss"><a href="#pane3-content2" id="pane-movie-mini-2">Movie Sentiment</a></li>
+				<li class="bigboss"><a href="#pane4" id="pane-entity">Entity Word Cloud</a></li>
+				<li class="miniboss"><a href="#pane4-content1" id="pane-entity-mini-1">Bubble Cloud</a></li>
 			</ul>
 		</div>
 

@@ -95,14 +95,51 @@ li {
 	top: 60px;
 	bottom: 0;
 	left: 0;
-	height: 100%;
-	width: 300px;
-	background-color: #eee;
-	border-right: 1px solid #ccc;
+	width: 250px;
+	background-color: #ddd;
+	box-shadow: 1px 0px 10px black;
 }
 
 .side a {
 	display: block;
+	font-family: 'Roboto' sans-serif;
+	padding: 25px 0 25px 15px;
+	color: #000;
+}
+
+.side .bigboss > a {
+	font-size: 1.5em;
+}
+
+.side .miniboss a {
+	font-size: 0.9em;
+}
+
+.side .bigboss {
+	border-bottom: 1px solid black;
+}
+
+.side .miniboss {
+	background-color: #eee;
+	display: none;
+}
+
+.side .miniboss:hover {
+	background-color: #6685A3;
+}
+
+.side .show {
+	display: block;
+}
+
+.side .mini-active {
+	background-color: #6685A3;
+}
+
+.side .active {
+	background-color: #40668C;
+	display: block;
+	border-bottom: 2px solid #222;
 }
 
 .flot-chart {
@@ -118,7 +155,7 @@ li {
 .main {
 	height: 100%;
 	width: auto;
-	padding: 60px 0 0 300px;
+	padding: 60px 0 0 250px;
 }
 
 .main li {
