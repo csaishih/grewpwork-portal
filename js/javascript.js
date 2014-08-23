@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
 	function resetpane1 () {
 		$('#pane-user-mini-1').slideUp();
 	}
@@ -37,14 +38,23 @@ $(document).ready(function() {
 		$('#pane-entity-mini-1').slideToggle();
 	}
 
+	resetpane1();
 	resetpane2();
 	resetpane3();
 	resetpane4();
+	$('.main').load('welcome.html');
 
 	$('.side .bigboss a').on('click', function(e) {
 		var currentAttrValue = $(this).attr('href');
 		$(this).parent('li').addClass('active').siblings().removeClass('active').removeClass('show');
-		if (currentAttrValue == '#pane1') {
+		if (currentAttrValue == '#pane-default') {
+			resetpane1();
+			resetpane2();
+			resetpane3();
+			resetpane4();
+			$('.main').load('welcome.html');
+		}
+		else if (currentAttrValue == '#pane1') {
 			resetpane2();
 			resetpane3();
 			resetpane4();
@@ -82,41 +92,26 @@ $(document).ready(function() {
 		var currentAttrValue = $(this).attr('href');
 		$(this).parent('li').addClass('mini-active').siblings().removeClass('mini-active');
 		if (currentAttrValue == '#pane1-content1') {
-			$('#pane1-content1').parent('li').siblings().removeClass('active');
-			$('#pane1-content1').parent('li').addClass('active');
-
+			$('.main').load('Visualizations/user_stats_vs_time/user_stats_vs_time.html');
 		}
 		else if (currentAttrValue == '#pane2-content1') {
-			$('#pane2-content1').parent('li').siblings().removeClass('active');
-			$('#pane2-content1').parent('li').addClass('active');
+			$('.main').load('Visualizations/BI_n_req_pur_VS_time/BI_n_req_pur_VS_time.html');
 		}
 		else if (currentAttrValue == '#pane2-content2') {
-			$('#pane2-content2').parent('li').siblings().removeClass('active');
-			$('#pane2-content2').parent('li').addClass('active');
+			$('.main').load('Visualizations/BI_avg_VS_time/BI_avg_VS_time.html');
 		}
 		else if (currentAttrValue == '#pane2-content3') {
-			$('#pane2-content3').parent('li').siblings().removeClass('active');
-			$('#pane2-content3').parent('li').addClass('active');
+			$('.main').load('Visualizations/BI_rev_VS_time/BI_rev_VS_time.html');
 		}
 		else if (currentAttrValue == '#pane3-content1') {
-			$('#pane3-content1').parent('li').siblings().removeClass('active');
-			$('#pane3-content1').parent('li').addClass('active');
+			$('.main').load('Visualizations/tweet_tally_vs_time/tweet_tally_vs_time.html');
 		}
 		else if (currentAttrValue == '#pane3-content2') {
-			$('#pane3-content2').parent('li').siblings().removeClass('active');
-			$('#pane3-content2').parent('li').addClass('active');
+			$('.main').load('Visualizations/average_sentiment_vs_time/average_sentiment_vs_time.html');
 		}
 		else if (currentAttrValue == '#pane4-content1') {
-			$('#pane4-content1').parent('li').siblings().removeClass('active');
-			$('#pane4-content1').parent('li').addClass('active');
+			$('.main').load('Visualizations/bubble_cloud/bubble_cloud.html');
 		}
+		e.preventDefault();
 	})
-
-	$("#pane1-content1").load('Visualizations/user_stats_vs_time/user_stats_vs_time.html');
-	$("#pane2-content1").load('Visualizations/BI_n_req_pur_VS_time/BI_n_req_pur_VS_time.html');
-	$("#pane2-content2").load('Visualizations/BI_avg_VS_time/BI_avg_VS_time.html');
-	$("#pane2-content3").load('Visualizations/BI_rev_VS_time/BI_rev_VS_time.html');
-	$("#pane3-content1").load('Visualizations/tweet_tally_vs_time/tweet_tally_vs_time.html');
-	$("#pane3-content2").load('Visualizations/average_sentiment_vs_time/average_sentiment_vs_time.html');
-	$("#pane4-content1").load('Visualizations/bubble_cloud/bubble_cloud.html');
 })

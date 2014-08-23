@@ -32,8 +32,9 @@
 
 		<div class="side">
 			<ul>
-				<li class="active bigboss"><a href="#pane1" id="pane-user">User Stats</a></li>
-				<li class="mini-active show miniboss"><a href="#pane1-content1" id="pane-user-mini-1">User Statistics VS Time</a></li>
+				<li class="active bigboss default"><a href="#pane-default">Dashboard</a></li>
+				<li class="bigboss"><a href="#pane1" id="pane-user">User Stats</a></li>
+				<li class="miniboss"><a href="#pane1-content1" id="pane-user-mini-1">User Statistics VS Time</a></li>
 				<li class="bigboss"><a href="#pane2" id="pane-bi">BI Stats</a></li>
 				<li class="miniboss"><a href="#pane2-content1" id="pane-bi-mini-1">Total Purchases and Requests</a></li>
 				<li class="miniboss"><a href="#pane2-content2" id="pane-bi-mini-2">Average Purchases and Requests</a></li>
@@ -46,16 +47,9 @@
 			</ul>
 		</div>
 
-		<div class="main">
-			<ul>
-				<li class="active"><div class="pane" id="pane1-content1"></div></li>
-				<li><div class="pane" id="pane2-content1"></div></li>
-				<li><div class="pane" id="pane2-content2"></div></li>
-				<li><div class="pane" id="pane2-content3"></div></li>
-				<li><div class="pane" id="pane3-content1"></div></li>
-				<li><div class="pane" id="pane3-content2"></div></li>
-				<li><div class="pane" id="pane4-content1"></div></li>
-			</ul>
+		<div class="main-wrapper">
+			<div class="main">
+			</div>
 		</div>
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
