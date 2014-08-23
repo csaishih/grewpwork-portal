@@ -46,7 +46,7 @@ $(document).ready(function() {
 
 	$('.side .bigboss a').on('click', function(e) {
 		var currentAttrValue = $(this).attr('href');
-		$(this).parent('li').addClass('active').siblings().removeClass('active').removeClass('show');
+		$(this).parent('li').addClass('active').siblings().removeClass('active').removeClass('show').removeClass('mini-active');
 		if (currentAttrValue == '#pane-default') {
 			resetpane1();
 			resetpane2();

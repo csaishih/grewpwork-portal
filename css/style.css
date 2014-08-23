@@ -96,7 +96,7 @@ li {
 	bottom: 0;
 	left: 0;
 	width: 250px;
-	background-color: #ddd;
+	background-color: #fff;
 	box-shadow: 1px 0px 10px black;
 }
 
@@ -107,39 +107,68 @@ li {
 	color: #000;
 }
 
-.side .bigboss > a {
-	font-size: 1.5em;
+
+.side .active {
+	background-color: #40668C;
+	display: block;
+	border-bottom: 2px solid #222;
 }
 
-.side .miniboss a {
-	font-size: 0.9em;
+.side .active a {
+	color: #fff;
+}
+
+.side .mini-active a {
+	color: #fff;
 }
 
 .side .bigboss {
 	border-bottom: 1px solid black;
 }
 
+.side .bigboss a {
+	font-size: 1.2em;
+}
+
+.side .bigboss a:hover {
+	background-color: #40668C;
+}
+
 .side .miniboss {
-	background-color: #eee;
+	background-color: #ddd;
 	display: none;
 }
 
-.side .miniboss:hover {
-	background-color: #6685A3;
-}
-
-.side .show {
-	display: block;
+.side .miniboss a {
+	font-size: 0.9em;
+	padding: 15px 0 15px 15px;
 }
 
 .side .mini-active {
 	background-color: #6685A3;
 }
 
-.side .active {
-	background-color: #40668C;
+.side .miniboss:hover {
+	background-color: #6685A3;
+}
+
+.side .default a {
+	padding: 25px 0;
+	text-align: center;
+	font-size: 1.8em;
+	color: #fff;
+}
+
+.side .default {
+	background-color: #A82626;
+}
+
+.side .default a:hover {
+	background-color: #9E0D0D;
+}
+
+.side .show {
 	display: block;
-	border-bottom: 2px solid #222;
 }
 
 .flot-chart {
@@ -152,20 +181,22 @@ li {
     height: 100%;
 }
 
-.main {
+.main-wrapper {
 	height: 100%;
 	width: auto;
 	padding: 60px 0 0 250px;
 }
 
-.main li {
-	display: none;
-}
-
-.main .active {
-	display: block;
-}
-
-.main .pane {
+.main {
 	padding: 50px;
+}
+
+.welcome-wrapper {
+	text-align: center;
+	font-size: 3em;
+}
+
+.welcome-wrapper p {
+	padding-top: 50px;
+	font-size: 0.4em;
 }
