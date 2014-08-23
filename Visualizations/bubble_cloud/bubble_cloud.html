@@ -1,0 +1,41 @@
+<html>
+<head>
+  <!-- CSS concatenated and minified via ant build script-->
+  <link rel="stylesheet" href="Visualizations/bubble_cloud/css/reset.css">
+  <link rel="stylesheet" href="Visualizations/bubble_cloud/css/style.css">
+  <!-- end CSS-->
+
+  <script src="Visualizations/bubble_cloud/js/libs/modernizr-2.0.6.min.js"></script>
+</head>
+
+<body>
+  <div id="container" class="container">
+    <header>
+    <h1>Your Entity Cloud</h1>
+    </header>
+    <div id="main" role="main">
+      <div id="vis"></div>
+	  <!--
+      <div id="controls">
+        <h3>Jitter</h3>
+        <form id="jitter" oninput="output.value = (jitter_input.value / 200).toFixed(3)" >
+          <input id="jitter_input" type="range" min="0" max="400" value="100" style="width:240px;">
+          <output name="output" for="input">0.5</output>
+        </form>
+      </div>
+	  -->
+    </div>
+  </div> <!--! end of #container -->
+
+  <script defer src="Visualizations/bubble_cloud/js/plugins.js"></script>
+  <script src="Visualizations/bubble_cloud/js/libs/d3.v2.js"></script>
+  <script type="text/javascript">
+		// Generate .csv file
+		$.post('Visualizations/bubble_cloud/get_entity_CSV.php', function() {
+			// Make visualization after 'get_entity_CSV.php' runs
+			$.getScript("Visualizations/bubble_cloud/vis.js");
+		});
+  </script>
+  
+</body>
+</html>

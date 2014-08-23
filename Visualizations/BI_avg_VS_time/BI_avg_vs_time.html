@@ -1,0 +1,75 @@
+<div class="panel-heading">
+	Average Purchases and Requests
+</div>
+<div class="panel-body">
+	<div class="flot-chart">
+		<div class="flot-chart-content" id="bi-avg-chart"></div>
+	</div>
+</div>
+
+<script>
+	//Flot Line Chart
+	$.getJSON('Visualizations/BI_avg_VS_time/get_BI_avg.php', null, pResponse);
+	
+	function pResponse(dat)
+	{
+		var offset = 0;
+		plot();
+
+		function plot() {
+		
+			var seriesData = new Array();
+			var chartData = [];
+			var ymin = Infinity;
+			var ymax = -Infinity;
+			
+			$.each(dat, function(metric, tallies)
+			{
+				// Make an object and add it to chartData
+				chartData = new Array();
+				$.each(tallies, function(time_stamp, tally)
+				{
+					time_stamp = Number(time_stamp) * 1000;
+					tally = Number(tally);
+					ymin = ( ymin < tally ) ? ymin : tally;
+					ymax = ( ymax >= tally ) ? ymax : tally;
+					
+					chartData.push( [time_stamp, tally] );
+				});
+				seriesData.push( { label: metric, data: chartData} );
+				
+			});
+			
+			var options = {
+				series: {
+					lines: {
+						show: true
+					},
+					points: {
+						show: true
+					}
+				},
+				grid: {
+					hoverable: true //IMPORTANT! this is needed for tooltip to work
+				},
+				yaxis: {
+					min: (ymin > 0) ? ymin * 0.9 : ymin * 1.1,
+					max: (ymax > 0) ? ymax * 1.1 : ymax * 0.9,
+				},
+				xaxis: { mode: "time" },
+				tooltip: true,
+				tooltipOpts: {
+					content: "'%s' of %x.1 is %y.4",
+					shifts: {
+						x: -60,
+						y: 25
+					}
+				}
+			};
+
+			var plotObj = $.plot($("#bi-avg-chart"), seriesData,
+				options);
+		}
+	};
+
+</script>
